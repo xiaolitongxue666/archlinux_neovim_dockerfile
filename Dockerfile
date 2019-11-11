@@ -15,7 +15,7 @@ RUN pacman -Sy \
 	# && curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 	&& cd /home/ \
 	#&& git clone https://github.com/xiaolitongxue666/Tools.git \
-	&& https://github.com/xiaolitongxue666/NeovimConfigFile.git \
+	&& git clone https://github.com/xiaolitongxue666/NeovimConfigFile.git \
 	&& mkdir -p /root/.config/nvim \
 	&& cp /home/NeovimConfigFile/* /root/.config/nvim \
 	&& python3 -m pip install pynvim \
