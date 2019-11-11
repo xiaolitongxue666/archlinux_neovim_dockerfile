@@ -14,9 +14,10 @@ RUN pacman -Sy \
 	&& yes | pacman -S neovim \
 	# && curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 	&& cd /home/ \
-	&& git clone https://github.com/xiaolitongxue666/Tools.git \
+	#&& git clone https://github.com/xiaolitongxue666/Tools.git \
+	&& https://github.com/xiaolitongxue666/NeovimConfigFile.git \
 	&& mkdir -p /root/.config/nvim \
-	&& cp /home/Tools/Configs/neovim_config/* /root/.config/nvim \
+	&& cp /home/NeovimConfigFile/* /root/.config/nvim \
 	&& python3 -m pip install pynvim \
 	&& pip3 install requests \
 	&& pip3 install pynvim \
