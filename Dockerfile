@@ -12,7 +12,7 @@ RUN pacman -Sy \
 	&& yes | pacman -S python-pip \
   	&& yes | pacman -S python2-pip \
 	&& yes | pacman -S neovim \
-	&& yes | ctags
+	&& yes | pacman -S ctags
 	# && curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 	&& cd /home/ \
 	&& git clone https://github.com/xiaolitongxue666/Tools.git \
