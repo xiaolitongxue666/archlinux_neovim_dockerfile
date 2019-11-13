@@ -5,6 +5,9 @@ RUN pacman -Sy \
 	&& echo -e "[archlinuxcn]" >> /etc/pacman.conf \
 	&& echo -e "SigLevel = Optional TrustedOnly" >> /etc/pacman.conf \
 	&& echo -e "Server = https://mirrors.ustc.edu.cn/archlinuxcn/\$arch" >> /etc/pacman.conf \
+	&& pacman -Syyu \
+	&& pacman -S archlinuxcn-keyring \
+	&& pacman -Syyu \
 	&& pacman -Syy \
 	&& curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 	&& yes | pacman -S git \
