@@ -15,6 +15,7 @@ RUN pacman -Sy \
 	&& yes | pacman -S python-pip \
   	&& yes | pacman -S python2-pip \
 	&& yes | pacman -S neovim \
+	&& yes | pacman -S make \
 	&& yes | pacman -S ctags \
 	&& yes | pacman -S xclip \
 	# && curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
