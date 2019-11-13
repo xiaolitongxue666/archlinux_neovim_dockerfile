@@ -1,4 +1,4 @@
-FROM archlinux/base
+FROM archlinux
 
 RUN pacman -Sy \
 	&& echo -e "" >> /etc/pacman.conf \
@@ -23,7 +23,11 @@ RUN pacman -Sy \
 	&& pip3 install requests \
 	&& pip3 install pynvim \
 	&& pip3 install neovim \
+	&& pip3 install --upgrade neovim \
 	&& python3 -m pip install pynvim\
+	&& yes | pacman -S ruby \
+	&& yes | pacman -S nodejs \
+	&& gem install neovim
 	&& nvim +'PlugInstall --sync' +qa \
 	#&& nvim --headless +PlugInstall +qa \
 	&& yes | pacman -Sc
