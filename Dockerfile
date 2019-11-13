@@ -24,6 +24,7 @@ RUN pacman -Sy \
 	&& pip3 install pynvim \
 	&& pip3 install neovim \
 	&& pip3 install --upgrade neovim \
+	&& pip2 install --upgrade neovim \
 	&& python3 -m pip install pynvim\
 	&& yes | pacman -S ruby \
 	&& yes | pacman -S nodejs \
