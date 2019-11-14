@@ -33,7 +33,7 @@ RUN pacman -Sy \
 	&& python3 -m pip install pynvim\
 	&& yes | pacman -S ruby \
 	&& yes | pacman -S nodejs \
-	&& gem install neovim
+	&& gem install neovim \
 	&& nvim +'PlugInstall --sync' +qa \
 	#&& nvim --headless +PlugInstall +qa \
 	&& yes | pacman -Sc
