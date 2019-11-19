@@ -15,10 +15,6 @@ RUN \
 	&& yes | pacman -S git \
 	&& yes | pacman -S gcc \
 	&& yes | pacman -S make \
-<<<<<<< HEAD
-	&& yes | pacman -S ctags \
-	&& yes | pacman -S xclip \
-=======
 # Install software for neovim	
 	&& curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 	&& yes | pacman -S neovim \
