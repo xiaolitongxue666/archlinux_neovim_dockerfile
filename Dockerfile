@@ -8,8 +8,8 @@ RUN \
 	&& echo -e "[archlinuxcn]" >> /etc/pacman.conf \
 	&& echo -e "SigLevel = Optional TrustedOnly" >> /etc/pacman.conf \
 	&& echo -e "Server = https://mirrors.ustc.edu.cn/archlinuxcn/\$arch" >> /etc/pacman.conf \
-	&& pacman -Syyu \
-	&& pacman -S archlinuxcn-keyring \
+	&& yes | pacman -Syyu \
+	&& yes | pacman -S archlinuxcn-keyring \
 	&& pacman -Syy \
 # Install common software
 	&& yes | pacman -S git \
@@ -23,22 +23,20 @@ RUN \
 	&& git clone https://github.com/xiaolitongxue666/NeovimConfigFile.git \
 	&& mkdir -p /root/.config/nvim \
 	&& cp /home/NeovimConfigFile/* /root/.config/nvim \	
-# Install software for neovim plug	
-	# && yes | pacman -S python3 \
-	# && yes | pacman -S python-pip \
-  	# && yes | pacman -S python2-pip \
-	# && yes | pacman -S ctags \
-	# && python3 -m pip install pynvim \
-	# && pip3 install requests \
-	# && pip3 install pynvim \
-	# && pip3 install neovim \
-	# && pip3 install --upgrade neovim \
-	# && pip2 install --upgrade neovim \
-	# && python3 -m pip install pynvim\
+# Install software for neovim plug
+	&& yes | pacman -S python2 \	
+	&& yes | pacman -S python3 \
+	&& yes | pacman -S python-pip \
+  	&& yes | pacman -S python2-pip \
+	&& yes | pacman -S ctags \
+	&& python3 -m pip install pynvim \
+	&& pip3 install neovim \
+	&& pip2 install --upgrade neovim \
+# Install software for neovim checkhealth	
 	# && yes | pacman -S ruby \
 	# && yes | pacman -S nodejs \
 	# && gem install neovim \
 # Install neovim plug on terminal	
-	# && nvim +'PlugInstall --sync' +qa \
+	&& nvim +'PlugInstall --sync' +qa \
 # Clear all install packets	
-	# && yes | pacman -Sc
+	&& yes | pacman -Sc
