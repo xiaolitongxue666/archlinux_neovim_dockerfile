@@ -18,9 +18,7 @@ RUN pacman -Sy \
 	&& yes | pacman -S make \
 	&& yes | pacman -S ctags \
 	&& yes | pacman -S xclip \
-	# && curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 	&& cd /home/ \
-	#&& git clone https://github.com/xiaolitongxue666/Tools.git \
 	&& git clone https://github.com/xiaolitongxue666/NeovimConfigFile.git \
 	&& mkdir -p /root/.config/nvim \
 	&& cp /home/NeovimConfigFile/* /root/.config/nvim \
