@@ -19,7 +19,6 @@ RUN \
 	&& curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 	&& yes | pacman -S neovim \
 # Clone neovim config and put to the right place
->>>>>>> 51452c97ee89b8aece3a06ba7af43433eac2dea0
 	&& cd /home/ \
 	&& git clone https://github.com/xiaolitongxue666/NeovimConfigFile.git \
 	&& mkdir -p /root/.config/nvim \
