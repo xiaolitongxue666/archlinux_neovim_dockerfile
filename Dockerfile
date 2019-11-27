@@ -6,7 +6,7 @@ RUN \
 	pacman -Sy \
 	&& echo -e "" >> /etc/pacman.conf \
 	&& echo -e "[archlinuxcn]" >> /etc/pacman.conf \
-	&& echo -e "SigLevel = Optional TrustedOnly" >> /etc/pacman.conf \
+	&& echo -e "SigLevel = Optional TrustAll" >> /etc/pacman.conf \
 	&& echo -e "Server = https://mirrors.ustc.edu.cn/archlinuxcn/\$arch" >> /etc/pacman.conf \
 	&& yes | pacman -Syyu \
 	&& yes | pacman -S archlinuxcn-keyring \
@@ -32,9 +32,11 @@ RUN \
 	&& python3 -m pip install pynvim \
 	&& pip3 install neovim \
 	&& pip2 install --upgrade neovim \
+# Install nodejs for coc.nvim plug
+	&& yes | pacman -S nodejs \
+	&& yes | pacman -S npm  \
 # Install software for neovim checkhealth	
 	# && yes | pacman -S ruby \
-	# && yes | pacman -S nodejs \
 	# && gem install neovim \
 # Install neovim plug on terminal	
 	&& nvim +'PlugInstall --sync' +qa \
